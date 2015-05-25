@@ -1,6 +1,6 @@
 {
     "name": "iancaunce/laravel-cachebust",
-    "description": "Adds a unique hash to the url of a file which invalidates the cache each time the file changes.",
+    "description": "A Laravel implementation of the cachebust package which adds a unique hash to the url of a file which invalidates the cache each time the file changes.",
     "keywords": ["assets", "asset", "cachebust", "cachebuster", "cache", "laravel"],
     "license": "MIT",
     "authors": [
@@ -9,13 +9,20 @@
             "email": "iancauncedevelopment@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "url": "https://github.com/IanCaunce/cachebust.git",
+            "type": "git"
+        }
+    ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "5.*"
+        "illuminate/support": "5.*",
+        "IanCaunce/cachebust": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "IanCaunce\\Cachebust\\": "src/"
+            "IanCaunce\\LaravelCachebust\\": "src/"
         }
     },
     "minimum-stability": "stable"

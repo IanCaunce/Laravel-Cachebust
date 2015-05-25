@@ -7,7 +7,7 @@
  * @license   MIT <http://opensource.org/licenses/MIT>
  */
 
-namespace IanCaunce\Cachebust\Providers;
+namespace IanCaunce\LaravelCachebust\Providers;
 
 use IanCaunce\Cachebust\Cachebust;
 use Illuminate\Support\ServiceProvider;

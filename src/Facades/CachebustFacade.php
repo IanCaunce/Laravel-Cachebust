@@ -7,7 +7,7 @@
  * @license   MIT <http://opensource.org/licenses/MIT>
  */
 
-namespace IanCaunce\Cachebust\Facades;
+namespace IanCaunce\LaravelCachebust\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
