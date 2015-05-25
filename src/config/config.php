@@ -7,6 +7,8 @@
  * @license   MIT <http://opensource.org/licenses/MIT>
  */
 
+use IanCaunce\Cachebust\Cachebust;
+
 return [
 
     /**
@@ -14,6 +16,19 @@ return [
      * @var boolean
      */
     'enabled' => true,
+
+    /**
+     * Dictates the default busting method
+     * @var string
+     */
+    'bustMethod' => Cachebust::BUST_METHOD_FILE,
+
+    /**
+     * Dictates if the file contents should
+     * be used when generating the hash.
+     * @var string
+     */
+    'useFileContents' => false,
 
     /**
      * The hashing algorithm used.
@@ -39,13 +54,6 @@ return [
      * @var boolean
      */
     'prefix' => '',
-
-    /**
-     * Dictates if the package uses the
-     * query busting technique.
-     * @var boolean
-     */
-    'queryBust' => false,
 
     /**
      * The name of the query parameter to be used.
