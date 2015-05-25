@@ -16,6 +16,13 @@ class CachebustServiceProvider extends ServiceProvider
 {
 
     /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = true;
+
+    /**
      * Bootstrap the application events.
      *
      * @return void
@@ -41,5 +48,15 @@ class CachebustServiceProvider extends ServiceProvider
             return new Cachebust(config('cachebust', []));
         });
 
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return ['IanCaunce\Cachebust\Cachebust'];
     }
 }
