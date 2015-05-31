@@ -63,7 +63,7 @@ Find the `aliases` key and add the facade alias:
 ```
 
 ##Configuration
-To configure the package, first publish its configuration file to the `config` folder. Go to the root directory of the site and run `php artisan vendor:publish`. You can now edit the configuation in that file.
+To configure the package, first publish its configuration file to the `config` folder. Go to the root directory of the site and run `php artisan vendor:publish`. You can then edit the default options in the published configuration file.
 
 ###enabled
 **Type**: `Boolean`  
@@ -82,7 +82,7 @@ This dictates the busting method used. See [Configuration Notes](#configuration-
 **Type**: `Boolean`  
 **Default**: `false`  
 
-If set to true, the assets contents will be used to generate the unique hash. This could have a memory impact for large assets as it will be held in memory whilst generating the hash.
+If set to true, the asset's contents will be used to generate the unique hash. This could have a memory impact for large assets as it will be held in memory whilst generating the hash.
 
 ###algorithm  
 **Type**: `string`  
@@ -107,7 +107,7 @@ Sets the path to the public directory of the assets.
 **Type**: `string`  
 **Default**: ''  
 
-This string prefixes the hash for `file` and `path` busting methods. You only need to set this if you serve non busted assets which also have a hash of the same length as the one in your configuration as part of the filename or path.
+This string prefixes the hash for `file` and `path` busting methods. You only need to set this if you serve non busted assets which also have a hash as part of the filename or path.
 
 ###queryParam
 **Type**: `string`  
@@ -115,7 +115,7 @@ This string prefixes the hash for `file` and `path` busting methods. You only ne
 
 The query parameter used when using the query busting method.
 
-##Configuration Notes<a name="configuration-notes"></a>
+##Configuration Notes
 
 For `file` and `path` busting, you will need to add a rewrite rule to your `.htaccess` file if you are running `Apache` or a location block if you are running `Nginx`.
 
@@ -152,7 +152,7 @@ location ~* "^(.*\/)[0-9a-f]{8}\/(.*)$" {
 }
 </pre>
 
-The default hash alogorithm used is `crc32` which has a hash length of 8 characters. If you would like to used a different hashing algorithm, you can do so by changing it in the configuration. Update the number in curly brackets to match the length of your chosen algorithm.
+The default hashing alogorithm used is `crc32` which has a hash length of 8 characters. If you would like to used a different hashing algorithm, you can do so by changing it in the configuration. Update the number in curly brackets to match the length of your chosen algorithm.
 
 For example, if I wanted to use `md5`, my regex would become something like:
 <pre>
@@ -179,7 +179,7 @@ Alternatively, you can use the cachebust class to generate the regex for you usi
 
 ##Usage
 
-Inside a blade template.
+Inside a [Blade](http://laravel.com/docs/5.0/templates) template.
 ```
     //Bust your asset.
     <link rel="stylesheet" href="{{ Cachebust::asset('/js/application.min.js') }}">
